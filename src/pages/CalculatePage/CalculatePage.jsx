@@ -3,6 +3,8 @@ import "./CalculatePage.css";
 import CreditParamsSection from '../../components/CalculateSections/CreditParamsSection';
 import PaymentsTable from '../../components/CalculateSections/PaymentsTable';
 
+import WaitImage from "../../assets/wait-img.webp"
+
 const CalculatePage = () => {
   const [creditParams, setCreditParams] = useState({});
   const [paymentRows, setPaymentRows] = useState([]);
@@ -23,6 +25,8 @@ const CalculatePage = () => {
       <CreditParamsSection onParamsChange={handleParamsChange} />
 
       <PaymentsTable onRowsChange={handleRowsChange} />
+
+      <img src={WaitImage} alt="" />
     </div>
   );
 };
