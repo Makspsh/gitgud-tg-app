@@ -1,0 +1,56 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1c1c1c;
+  color: white;
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 24px;
+  margin-bottom: 80px;
+  font-weight: 400;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+}
+
+.menu-btn img {
+  width: 50px;
+  height: 50px;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Цвета */
+.blue {
+  background-color: #3b9cc9;
+}
+
+.green {
+  background-color: #257a5e;
+}
+
+.darkgreen {
+  background-color: #1b5e20;
+}
