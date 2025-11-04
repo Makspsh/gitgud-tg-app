@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #1c1c1c;
-  color: white;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
   text-align: center;
 }
 
