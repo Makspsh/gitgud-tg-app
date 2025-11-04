@@ -1,19 +1,41 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainMenu from "./pages/StartMenu/StartMenu";
+import React, { useReducer } from "react";
 import InfoPage from "./pages/InfoPage/InfoPage";
+import StartMenu from "./pages/StartMenu/StartMenu";
 const tg = window.Telegram.WebApp;
 
-function App() {
+const ACTIONS = {
+  GO_TO_INFO: "GO_TO_INFO",
+  GO_TO_START: "GO_TO_START",
+};
 
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainMenu />} />
-        <Route path="/info" element={<InfoPage />} />
-      </Routes>
-    </Router>
-  );
+const initialState = {
+  page: "start",
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case ACTIONS.GO_TO_INFO:
+      return { ...state, page: "info" };
+    case ACTIONS.GO_TO_START:
+      return { ...state, page: "start" };
+    default:
+      return state;
+  }
 }
 
-export default App;
+export default function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <>
+      {state.page === "start" && (
+        <StartMenu onOpenInfo={() => dispatch({ type: ACTIONS.GO_TO_INFO })} />
+      )}
+
+      {state.page === "info" && (
+        <InfoPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
+      )}
+    </>
+  );
+}
