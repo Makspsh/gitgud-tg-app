@@ -1,4 +1,4 @@
-.info-container {
+.question-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,16 +7,17 @@
   text-align: center;
 }
 
-.info-image {
-  max-width: 50%;
-  height: auto;
-}
-
-.info-title {
+.question-title {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.question-image {
+  max-width: 50%;
+  height: auto;
+}
+
 .home-btn {
   width: 80px;
   height: 80px;
