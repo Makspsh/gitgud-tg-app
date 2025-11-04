@@ -27,6 +27,15 @@ function reducer(state, action) {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    const theme = tg.themeParams;
+
+    if (theme) {
+      document.body.style.backgroundColor = theme.bg_color;
+      document.body.style.color = theme.text_color;
+    }
+  }, []);
+  
   return (
     <>
       {state.page === "start" && (
