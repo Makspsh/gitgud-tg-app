@@ -4,7 +4,7 @@ import infoIcon from "../../assets/icons/info-icon.svg";
 import questionIcon from "../../assets/icons/question-icon.svg";
 import calculatorIcon from "../../assets/icons/calculate-icon.svg";
 
-export default function StartMenu({ onOpenInfo, onOpenQuestion }) {
+export default function StartMenu({ onOpenInfo, onOpenQuestion, onOpenCalculate }) {
   return (
     <div className="menu-container">
       <h1 className="menu-title">разделы</h1>
@@ -15,7 +15,7 @@ export default function StartMenu({ onOpenInfo, onOpenQuestion }) {
         <button className="menu-btn green" onClick={onOpenQuestion}>
           <img src={questionIcon} alt="question" />
         </button>
-        <button className="menu-btn darkgreen">
+        <button className="menu-btn darkgreen" onClick={onOpenCalculate}>
           <img src={calculatorIcon} alt="calculator" />
         </button>
       </div>
