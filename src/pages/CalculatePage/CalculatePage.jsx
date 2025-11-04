@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState } from 'react';
 import "./CalculatePage.css";
-import homePageIcon from "../../assets/icons/homepage-icon.svg";
-import WaitImage from "../../assets/wait-img.webp";
+import CreditParamsSection from '../../components/CalculateSections/CreditParamsSection';
+import PaymentsTable from '../../components/CalculateSections/PaymentsTable';
 
-export default function CalculatePage({ onBack }) {
+const CalculatePage = () => {
+  const [creditParams, setCreditParams] = useState({});
+  const [paymentRows, setPaymentRows] = useState([]);
+
+  const handleParamsChange = (params) => {
+    setCreditParams(params);
+    console.log('Параметры:', params);
+  };
+
+  const handleRowsChange = (rows) => {
+    setPaymentRows(rows);
+    console.log('Данные таблицы:', rows);
+  };
+
   return (
-    <div className="calculate-container">
-      <h2 className="calculate-title">Калькулятор</h2>
-      <img className="calculate-image" src={WaitImage} alt="wait" />
-      <p className="calculate-text">Здесь будет калькулятор</p>
-      <button className="home-btn blue" onClick={onBack}>
-        <img src={homePageIcon} alt="home" />
-      </button>
+    <div className='calculate-container'>
+      <h2 className='calculate-title'>Калькулятор</h2>
+      <CreditParamsSection onParamsChange={handleParamsChange} />
+
+      <PaymentsTable onRowsChange={handleRowsChange} />
     </div>
   );
-}
+};
+
+export default CalculatePage;
