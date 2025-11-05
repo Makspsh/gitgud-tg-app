@@ -20,10 +20,11 @@
 }
 
 .back-btn {
-  width: 60px;
-  color: white;
-  border-style: hidden;
-  margin-right: 40px;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 .wait-image {
