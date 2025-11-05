@@ -2,6 +2,7 @@
 .calculator-top {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .calculator-title {
   text-align: center;
