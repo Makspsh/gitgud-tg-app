@@ -1,18 +1,15 @@
-import { useEffect } from 'react';
-import React, { useReducer } from "react";
+import { useEffect, useReducer } from 'react';
 
 import StartMenu from "./pages/StartMenu/StartMenu";
-import InfoPage from "./pages/InfoPage/InfoPage";
-import QuestionPage from "./pages/QuestionPage/QuestionPage";
-import CalculatePage from "./pages/CalculatePage/CalculatePage";
+import CalculatorPage from "./pages/CalculatorPage/CalculatorPage";
+import ChatPage from "./pages/ChatPage/ChatPage";
 
 const tg = window.Telegram.WebApp;
 
 const ACTIONS = {
-  GO_TO_INFO: "GO_TO_INFO",
   GO_TO_START: "GO_TO_START",
-  GO_TO_QUESTION: "GO_TO_QUESTION",
-  GO_TO_CALCULATE: "GO_TO_CALCULATE",
+  GO_TO_CALCULATOR: "GO_TO_CALCULATOR",
+  GO_TO_CHAT: "GO_TO_CHAT",
 };
 
 const initialState = {
@@ -23,12 +20,10 @@ function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.GO_TO_START:
       return { ...state, page: "start" };
-    case ACTIONS.GO_TO_INFO:
-      return { ...state, page: "info" };
-    case ACTIONS.GO_TO_QUESTION:
-      return { ...state, page: "question" };
-    case ACTIONS.GO_TO_CALCULATE:
-      return { ...state, page: "calculate" };
+    case ACTIONS.GO_TO_CHAT:
+        return { ...state, page: "chat" };
+    case ACTIONS.GO_TO_CALCULATOR:
+      return { ...state, page: "calculator" };
     default:
       return state;
   }
@@ -50,23 +45,18 @@ export default function App() {
     <>
       {state.page === "start" && (
         <StartMenu
-          onOpenInfo={() => dispatch({ type: ACTIONS.GO_TO_INFO })}
-          onOpenQuestion={() => dispatch({ type: ACTIONS.GO_TO_QUESTION })}
-          onOpenCalculate={() => dispatch({ type: ACTIONS.GO_TO_CALCULATE })}
+          onOpenCalculator={() => dispatch({ type: ACTIONS.GO_TO_CALCULATOR })}
         />
       )}
-
-      {state.page === "info" && (
-        <InfoPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
-      )}
-
-      {state.page === "question" && (
-        <QuestionPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
-      )}
       
-      {state.page === "calculate" && (
-        <CalculatePage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
+      {state.page === "calculator" && (
+        <CalculatorPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
       )}
+
+      {state.page === "chat" && (
+        <ChatPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
+      )}
+
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import "./CalculatePage.css";
-import CreditParamsSection from '../../components/CalculateSections/CreditParamsSection';
-import PaymentsTable from '../../components/CalculateSections/PaymentsTable';
+import "./CalculatorPage.css";
+import CreditParamsSection from '../../components/CalculatorSections/CreditParamsSection';
+import PaymentsTable from '../../components/CalculatorSections/PaymentsTable';
 
 import WaitImage from "../../assets/wait-img.webp"
 
-const CalculatePage = () => {
+const calculatorPage = () => {
   const [creditParams, setCreditParams] = useState({});
   const [paymentRows, setPaymentRows] = useState([]);
 
@@ -20,8 +20,8 @@ const CalculatePage = () => {
   };
 
   return (
-    <div className='calculate-container'>
-      <h2 className='calculate-title'>Калькулятор</h2>
+    <div className='calculator-container'>
+      <h2 className='calculator-title'>Калькулятор</h2>
       <CreditParamsSection onParamsChange={handleParamsChange} />
 
       <PaymentsTable onRowsChange={handleRowsChange} />
@@ -31,4 +31,4 @@ const CalculatePage = () => {
   );
 };
 
-export default CalculatePage;
+export default calculatorPage;

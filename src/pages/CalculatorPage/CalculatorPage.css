@@ -1,9 +1,9 @@
 
-
-.calculate-title {
+.calculator-title {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 img {
