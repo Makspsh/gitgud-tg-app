@@ -12,12 +12,18 @@
   border-radius: 50%;
   border-style: hidden;
   margin-right: 40px;
-  background: none;
 }
 
 .home-btn img {
   width: 50px;
   height: 50px;
+}
+
+.back-btn {
+  width: 60px;
+  color: white;
+  border-style: hidden;
+  margin-right: 40px;
 }
 
 .wait-image {

@@ -23,8 +23,8 @@ export default function CalculatorPage({ onBack }) {
   return (
     <div className='calculator-container'>
       <div className='calculator-top'>
-        <button className="home-btn" onClick={onBack}>
-          <img src={homePageIcon} alt="home" />
+        <button className="back-btn" onClick={onBack}>
+          ←
         </button>
         <h2 className='calculator-title'>Калькулятор</h2>
       </div>
