@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./CalculatorPage.css";
 import CreditParamsSection from '../../components/CalculatorSections/CreditParamsSection';
 import PaymentsTable from '../../components/CalculatorSections/PaymentsTable';
@@ -34,6 +34,7 @@ export default function CalculatorPage({ onBack }) {
       <PaymentsTable onRowsChange={handleRowsChange} />
 
       <img className="wait-image" src={WaitImage} alt="" />
+      <p>на график не хватило энергетиков</p>
     </div>
   );
 };

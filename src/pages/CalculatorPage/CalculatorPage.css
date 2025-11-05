@@ -1,6 +1,3 @@
-.calculator-container {
-  
-}
 
 .calculator-top {
   display: flex;
@@ -15,6 +12,7 @@
   border-radius: 50%;
   border-style: hidden;
   margin-right: 40px;
+  background: none;
 }
 
 .home-btn img {

@@ -7,9 +7,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: white;
+  color: none;
   font-size: 28px;
   transition: transform 0.2s ease;
+  background: none;
 }
 
 .menu-button:hover {
