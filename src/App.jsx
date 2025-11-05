@@ -20,10 +20,10 @@ function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.GO_TO_START:
       return { ...state, page: "start" };
-    case ACTIONS.GO_TO_CHAT:
-        return { ...state, page: "chat" };
     case ACTIONS.GO_TO_CALCULATOR:
       return { ...state, page: "calculator" };
+    case ACTIONS.GO_TO_CHAT:
+        return { ...state, page: "chat" };
     default:
       return state;
   }
@@ -46,13 +46,14 @@ export default function App() {
       {state.page === "start" && (
         <StartMenu
           onOpenCalculator={() => dispatch({ type: ACTIONS.GO_TO_CALCULATOR })}
+          onOpenChat={() => dispatch({ type: ACTIONS.GO_TO_CHAT })}
         />
       )}
       
       {state.page === "calculator" && (
         <CalculatorPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
       )}
-
+  
       {state.page === "chat" && (
         <ChatPage onBack={() => dispatch({ type: ACTIONS.GO_TO_START })} />
       )}

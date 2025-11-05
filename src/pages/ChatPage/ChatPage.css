@@ -1,0 +1,154 @@
+/* Общий контейнер страницы */
+.chatpage-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* Верхняя панель */
+.chatpage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #222;
+  flex-shrink: 0;
+}
+
+.chatpage-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.chatpage-back-btn,
+.chatpage-menu-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Основное поле чата */
+.chatpage-body {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Сообщения */
+.chatpage-msg {
+  display: flex;
+}
+
+.chatpage-msg.user {
+  justify-content: flex-start;
+}
+
+.chatpage-msg.bot {
+  justify-content: flex-end;
+}
+
+.chatpage-bubble {
+  background: #333;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* Нижняя панель */
+.chatpage-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid #333;
+  background: #111;
+  flex-shrink: 0;
+}
+
+.chatpage-footer input {
+  flex: 1;
+  background: #222;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.chatpage-footer input:focus {
+  outline: none;
+}
+
+.chatpage-send-btn {
+  background: #444;
+  border: none;
+  color: white;
+  margin-left: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Меню */
+.chatpage-menu-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chatpage-menu-panel {
+  background: #222;
+  width: 280px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatpage-menu-panel h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.chatpage-archive {
+  margin-top: 10px;
+}
+
+.chatpage-archive-item {
+  background: #333;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.chatpage-archive-item button,
+.chatpage-delete-all {
+  background: #444;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 3px 6px;
+}

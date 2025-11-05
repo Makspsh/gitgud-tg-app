@@ -3,9 +3,10 @@ import "./CalculatorPage.css";
 import CreditParamsSection from '../../components/CalculatorSections/CreditParamsSection';
 import PaymentsTable from '../../components/CalculatorSections/PaymentsTable';
 
-import WaitImage from "../../assets/wait-img.webp"
+import WaitImage from '../../assets/wait-img.webp';
+import homePageIcon from '../../assets/icons/homepage-icon.svg';
 
-const calculatorPage = () => {
+export default function CalculatorPage({ onBack }) {
   const [creditParams, setCreditParams] = useState({});
   const [paymentRows, setPaymentRows] = useState([]);
 
@@ -21,14 +22,18 @@ const calculatorPage = () => {
 
   return (
     <div className='calculator-container'>
-      <h2 className='calculator-title'>Калькулятор</h2>
+      <div className='calculator-top'>
+        <button className="home-btn" onClick={onBack}>
+          <img src={homePageIcon} alt="home" />
+        </button>
+        <h2 className='calculator-title'>Калькулятор</h2>
+      </div>
+
       <CreditParamsSection onParamsChange={handleParamsChange} />
 
       <PaymentsTable onRowsChange={handleRowsChange} />
 
-      <img src={WaitImage} alt="" />
+      <img className="wait-image" src={WaitImage} alt="" />
     </div>
   );
 };
-
-export default calculatorPage;
