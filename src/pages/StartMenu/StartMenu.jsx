@@ -7,7 +7,7 @@ import chatIcon from "../../assets/icons/chat-icon.svg";
 export default function StartMenu({ onOpenCalculator, onOpenChat }) {
   return (
     <div className="menu-container">
-      <h1 className="menu-title">шаблоны</h1>
+      <h1 className="menu-title">шаблоны:</h1>
       <div className="menu-buttons">
         <button className="menu-btn" onClick={onOpenCalculator}>
           <img src={calculatorIcon} alt="calculator" />
